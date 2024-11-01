@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/AddressBook/AddressBook"
+  ],
+  "window": {
+    "navigationBarTitleText": "联系人管理",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "permission": {
+    "scope": {
+      "address": {
+        "desc": "你的应用需要获取地址信息"
+      }
+    }
+  }
+}
+
+

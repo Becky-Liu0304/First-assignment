@@ -1,0 +1,49 @@
+<view>
+  <!-- 左侧列表内容部分 -->
+  <view class="table">
+  <view class="table-header">
+    <view class="table-cell">姓名</view>
+    <view class="table-cell">手机号</view>
+    <view class="table-cell">操作</view>
+  </view>
+  
+  <scroll-view class="contentList" scroll-y="true">
+    <block wx:for="{{listMain}}" wx:key="id">
+      <view class="table-row">
+        <view class="table-cell">{{item.name}}</view>
+        <view class="table-cell">{{item.phone}}</view>
+        <view class="table-cell">
+          <button bindtap="editContact" data-id="{{item.id}}">编辑</button><button bindtap="deleteContact" data-id="{{item.id}}">删除</button>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+
+  <!-- 顶部固定分类 -->
+  <view class="list-fixed {{!fixedTitle ? 'hide' : ''}}" style="transform: translate3d(0, {{fixedTop}}px, 0);">
+    <view class="fixed-title">{{fixedTitle}}</view>
+  </view>
+
+  <!-- 右侧字母导航 -->
+  <view class="orientation_region">
+    <view class="orientation">#</view>
+    <block wx:for="{{listMain}}" wx:key="{{item.id}}">
+      <view class="orientation_city {{isActive == item.id ? 'active' : ''}}" bindtap="scrollToViewFn" data-id="{{item.id}}">
+        {{item.region}}
+      </view>
+    </block>
+  </view>
+
+  <!-- 添加/编辑联系人表单 -->
+  <view class="contact-form">
+    <form bindsubmit="onAddContact">
+      <input placeholder="姓名" name="name" value="{{newContact.name}}" bindinput="onInputChange" data-field="name" />
+      <input placeholder="电话" name="phone" value="{{newContact.phone}}" bindinput="onInputChange" data-field="phone" />
+      <button form-type="submit" wx:if="{{!editContact}}">添加联系人</button>
+      <button bindtap="onUpdateContact" wx:if="{{editContact}}">更新联系人</button>
+      <button bindtap="cancelEdit" wx:if="{{editContact}}">取消</button>
+    </form>
+  </view>
+</view>

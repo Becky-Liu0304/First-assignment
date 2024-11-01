@@ -1,0 +1,123 @@
+/* 通用样式 */
+/* pages/example/example.wxss */
+.table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header, .table-row {
+  display: flex; /* 使用 flex 布局 */
+  justify-content: space-between; /* 均匀分布 */
+  border-bottom: 1px solid #ddd; /* 行分隔线 */
+}
+
+.table-header {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.table-cell {
+  flex: 1; /* 每列均分宽度 */
+  padding: 10px;
+  text-align: left; /* 左对齐 */
+}
+
+.table-cell button {
+  width: 50px;
+  margin-right: 5px; /* 设置按钮之间的间距 */
+  font-size: 12px; /* 调整按钮文字大小 */
+  padding: 4px 8px; /* 设置按钮内边距 */
+  min-width: 50px; /* 设置按钮的最小宽度 */
+  background-color: #007aff; /* 设置按钮背景色 */
+  color: white; /* 设置按钮文字颜色 */
+  border: none; /* 去掉边框 */
+  border-radius: 4px; /* 圆角 */
+  cursor: pointer; /* 鼠标指针 */
+}
+
+
+.contentList {
+  max-height: 300px; /* 设置滚动区域的最大高度 */
+  overflow-y: auto; /* 允许垂直滚动 */
+}
+
+
+.address_top {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.address_bottom {
+  padding: 10px;
+  background-color: #f8f8f8;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.orientation_region {
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  z-index: 100;
+}
+
+.orientation {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.orientation_city {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.orientation_city.active {
+  color: #007aff;
+  font-weight: bold;
+}
+
+.list-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 99;
+  padding: 10px;
+}
+
+.fixed-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-form {
+  padding: 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #005bb5;
+}
